@@ -1,0 +1,33 @@
+<!-- menu-list.component.html -->
+
+<div class="container mt-4">
+  <h2 class="mb-4">Menu for {{ selectedRestaurant?.name }}</h2>
+
+  <div *ngIf="filteredMenuItems.length > 0; else noMenuItems" class="row">
+    <div *ngFor="let menuItem of filteredMenuItems" class="col-lg-6 mb-4"> <!-- Increase width to col-lg-6 -->
+      <div class="card menu-item-card">
+        <img [src]="getRestaurantImage(menuItem.name)" class="card-img-top" alt="{{ menuItem.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ menuItem.name }}</h5>
+          <p class="card-text">{{ menuItem.description }}</p>
+          <p class="card-text">Price: {{ menuItem.price }}</p>
+          <label for="quantity">Quantity:</label>
+          <select id="quantity" [(ngModel)]="menuItem.quantity">
+            <option *ngFor="let quantityOption of quantityOptions" [value]="quantityOption">
+              {{ quantityOption }}
+            </option>
+          </select>
+          <button class="btn btn-primary" (click)="addToOrder(menuItem)">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noMenuItems>
+    <p>No menu items available.</p>
+  </ng-template>
+
+  <div class="mt-4">
+    <button class="btn btn-secondary" (click)="navigateToOrderList()">Go to Order List</button>
+  </div>
+</div>

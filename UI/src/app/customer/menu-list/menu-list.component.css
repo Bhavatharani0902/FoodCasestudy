@@ -1,0 +1,40 @@
+/* Add this to your component's CSS file or styles.css */
+
+.menu-item-card {
+    /* Add additional styles to enhance the appearance of the menu item cards */
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; /* Add a subtle animation on hover */
+  }
+  
+  .menu-item-card:hover {
+    transform: scale(1.05); /* Enlarge the card on hover for a subtle zoom effect */
+  }
+  
+  .menu-item-card img {
+    width: 100%; /* Make the image fill the entire width of the container */
+    height: 50%; /* Adjust the height of the image */
+    object-fit: cover; /* Maintain image aspect ratio and cover the container */
+    border-bottom: 1px solid #eee; /* Add a border at the bottom of the image */
+  }
+  
+  .menu-item-card .card-body {
+    padding: 15px;
+  }
+  
+  .menu-item-card button {
+    width: 100%; /* Make the button full-width */
+    margin-top: 10px; /* Add some space above the button */
+  }
+  
+  .menu-item-card h5 {
+    color: #333; /* Customize the title color */
+    font-size: 1.5rem; /* Increase the font size of the title */
+    margin-bottom: 10px; /* Add space below the title */
+  }
+  
+  .menu-item-card p {
+    color: #666; /* Customize the text color */
+  }
+  
